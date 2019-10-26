@@ -58,7 +58,7 @@ if (file_exists(SYSTEMPATH . 'Config/Routes.php'))
  * only routes that have been defined here will be available.
  */
 $routes->setDefaultNamespace('App\Controllers');
-$routes->setDefaultController('Degeo');
+$routes->setDefaultController('Blog');
 $routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(true);
 $routes->set404Override();
@@ -70,9 +70,12 @@ $routes->setAutoRoute(true);
  * --------------------------------------------------------------------
  */
 
+// Blog Route for Articles
+$routes->add('articles(:any)', 'Blog::articles$1');
+
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Degeo::index');
+$routes->get('/', 'Blog::index');
 
 /**
  * --------------------------------------------------------------------
