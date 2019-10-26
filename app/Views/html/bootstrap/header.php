@@ -11,3 +11,4 @@ isset( $layout ) || $layout     = new stdObject();
 		<?php $resources->render(); ?>
 	</head>
 	<body class="<?php #echo $layout->body_classes(); - @TODO ?>">
+		<div class="<?php echo $layout->container(); ?>">
