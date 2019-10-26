@@ -19,7 +19,7 @@ class Application extends BaseConfig
 	|--------------------------------------------------------------------------
 	| @TODO:Setup - Set application name
 	*/
-	public $name = 'DeGeo CodeIgniter 4 Starter - @TODO';
+	public $name = 'DeGeo Blog';
 
 	/*
 	|--------------------------------------------------------------------------
@@ -27,7 +27,7 @@ class Application extends BaseConfig
 	|--------------------------------------------------------------------------
 	| @TODO:Setup - Set application description
 	*/
-	public $description = 'A CodeIgniter 4 starter package for the DeGeo network.';
+	public $description = 'Articles from the DeGeo Network.';
 
 	/*
 	|--------------------------------------------------------------------------
@@ -35,6 +35,6 @@ class Application extends BaseConfig
 	|--------------------------------------------------------------------------
 	| @TODO:Setup - Set application keywords
 	*/
-	public $keywords = 'codeigniter4,codeigniter,starter,bootstrap';
+	public $keywords = 'degeo,network,degeo network,network of earth,blog,articles';
 
 } // class
