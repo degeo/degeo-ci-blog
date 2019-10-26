@@ -6,3 +6,9 @@ isset( $article ) || show_error( 'Missing Article Variable for Article View in '
 <div class="article-content">
 	<?php echo $article['article_content']; ?>
 </div>
+
+<p>
+	<a href="<?php echo site_url(); ?>">
+		Return Home
+	</a>
+</p>

@@ -1,9 +1,9 @@
 <?php namespace App\Controllers;
 
-use \App\Controllers\BaseController;
+use \App\Controllers\ApplicationController;
 use \App\Models\Articles;
 
-class Blog extends BaseController
+class Blog extends ApplicationController
 {
 
 	protected $articles_model;
@@ -30,7 +30,7 @@ class Blog extends BaseController
 		$this->renderer->setVar( 'articles', $articles );
 
 		// Add Layout
-		$this->layout->add( 'blog/articles/articles-list', 2 );
+		$this->layout->add( 'blog/articles/articles-list', 100 );
 
 		// Render Layout
 		return $this->render();
@@ -63,7 +63,7 @@ class Blog extends BaseController
 		$this->renderer->setVar( 'article', $article );
 
 		// Add Layout
-		$this->layout->add( 'blog/articles/article-single', 2 );
+		$this->layout->add( 'blog/articles/article-single', 100 );
 
 		// Render Layout
 		return $this->render();
