@@ -28,6 +28,9 @@ class ApplicationController extends DegeoController
 		//--------------------------------------------------------------------
 		// E.g.:
 		// $this->session = \Config\Services::session();
+
+		// Queue Page Title
+		$this->layout->add( 'html/bootstrap/title', 10 );
 	}
 
 }
