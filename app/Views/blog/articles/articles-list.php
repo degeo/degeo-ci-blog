@@ -4,19 +4,12 @@ isset( $articles ) || $articles = [];
 <div class="<?php echo $layout->row(); ?>">
 	<div class="<?php echo $layout->column( 'xs', 12 ); ?>">
 
-		<ul>
+		<ul class="list-unstyled">
 			<?php foreach($articles as $article): ?>
 			<li>
-				<h2><?php echo $article['article_title']; ?></h2>
-				<?php if(! empty( $article['article_description'] )): ?>
-				<p><?php echo $article['article_description']; ?></p>
-				<?php endif; ?>
-				<p>
-					<a href="<?php echo site_url( 'articles/' . $article['article_url'] ); ?>"
-						title="<?php echo $article['article_title']; ?>">
-						Read more
-					</a>
-				</p>
+
+				<?php echo view( 'blog/articles/article-jumbotron', [ 'article' => $article, 'read_more' => true ] ); ?>
+
 			</li>
 			<?php endforeach; ?>
 		</ul>
