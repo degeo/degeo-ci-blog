@@ -19,7 +19,7 @@ class Application extends BaseConfig
 	|--------------------------------------------------------------------------
 	| @TODO:Setup - Set application name
 	*/
-	public $name = 'DeGeo Blog';
+	public $name = 'The DeGeo Network';
 
 	/*
 	|--------------------------------------------------------------------------
