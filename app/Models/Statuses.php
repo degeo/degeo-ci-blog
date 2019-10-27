@@ -24,4 +24,14 @@ class Statuses extends Model
 	protected $validationMessages = [];
 	protected $skipValidation     = true;
 
-}
+	public function status($status_name)
+	{
+		if (empty( $status_name ))
+		{
+			return [];
+		}
+
+		return $this->where( 'status_name', ucfirst( strtolower( trim( $status_name ) ) ) )->first();
+	} // function
+
+} // class

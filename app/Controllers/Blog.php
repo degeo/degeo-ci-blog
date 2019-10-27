@@ -23,8 +23,15 @@ class Blog extends ApplicationController
 		// Add Second Breadcrumb
 		$this->breadcrumbs->add( 'home/degeo', $this->document->title(), 2 );
 
+		$published_status = $this->statuses_model->status( 'Published' );
+
 		// Data Processing (Model calls)
-		$articles = $this->articles_model->findAll();
+		$articles = $this->articles_model
+							->where( 'status_id', $published_status['status_id'] )
+							->orderBy( 'article_is_sticky', 'desc' )
+							->orderBy( 'article_published', 'desc')
+							->orderBy( $this->articles_model->createdField, 'desc')
+							->findAll();
 
 		// Set Data in Renderer
 		$this->renderer->setVar( 'articles', $articles );
@@ -45,8 +52,13 @@ class Blog extends ApplicationController
 			return redirect()->to( site_url() );
 		}
 
+		$published_status = $this->statuses_model->status( 'Published' );
+
 		// Read Article by Article URL
-		$article = $this->articles_model->where( 'article_url', $article_url )->first();
+		$article = $this->articles_model
+							->where( 'article_url', trim( $article_url ) )
+							->where( 'status_id', $published_status['status_id'] )
+							->first();
 
 		if (empty( $article ))
 		{
