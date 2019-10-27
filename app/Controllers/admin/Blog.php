@@ -46,7 +46,7 @@ class Blog extends ApplicationAclController
 
 	public function article($article_id = '')
 	{
-		if(! empty( $article_id ) && $article_id !== intval( $article_id )):
+		if(! empty( $article_id ) && intval( $article_id ) !== $article_id):
 			throw new \Exception( 'Article ID must be of integer type in ' . __METHOD__ );
 		endif;
 
