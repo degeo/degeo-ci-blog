@@ -71,7 +71,7 @@ $routes->setAutoRoute(true);
  */
 
 // Blog Route for Articles
-$routes->add('articles(:any)', 'Blog::articles$1');
+$routes->add('/articles(:any)', 'Blog::articles$1');
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
